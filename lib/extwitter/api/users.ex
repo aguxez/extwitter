@@ -55,6 +55,14 @@ defmodule ExTwitter.API.Users do
     |> ExTwitter.Parser.parse_user
   end
 
+  def update_profile(options \\ []) do
+    params = ExTwitter.Parser.parse_request_params(options)
+
+    :post
+    |> request("1.1/account/update_profile.json")
+    |> ExTwitter.Parser.parse_profile_update()
+  end
+
   defp parse_user_id_param(user_id) when is_integer(user_id) do
     [user_id: user_id]
   end

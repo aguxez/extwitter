@@ -150,4 +150,8 @@ defmodule ExTwitter.Parser do
   def parse_profile_banner(object) do
     struct(ExTwitter.Model.ProfileBanner, object)
   end
+
+  def parse_profile_update(object) do
+    struct(ExTwitter.Model.User, object)
+  end
 end
