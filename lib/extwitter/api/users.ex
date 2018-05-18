@@ -59,7 +59,7 @@ defmodule ExTwitter.API.Users do
     params = ExTwitter.Parser.parse_request_params(options)
 
     :post
-    |> request("1.1/account/update_profile.json")
+    |> request("1.1/account/update_profile.json", params)
     |> ExTwitter.Parser.parse_profile_update()
   end
 

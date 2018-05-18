@@ -940,8 +940,19 @@ defmodule ExTwitter do
   # POST account/settings
   # https://dev.twitter.com/rest/reference/post/account/settings
 
-  # POST account/update_profile
+  @doc """
+  POST account/update_profile
+
+  ## Examples
+  ```iex
+    iex> ExTwitter.update_profile(description: "Some description")
+  ```
+
+  ## Reference
   # https://dev.twitter.com/rest/reference/post/account/update_profile
+  """
+  @spec update_profile(Keyword.t) :: ExTwitter.Model.User.t
+  defdelegate update_profile(opts), to: Extwitter.API.Users
 
   # POST account/update_profile_background_image
   # https://dev.twitter.com/rest/reference/post/account/update_profile_background_image
