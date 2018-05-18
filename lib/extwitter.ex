@@ -952,7 +952,7 @@ defmodule ExTwitter do
   # https://dev.twitter.com/rest/reference/post/account/update_profile
   """
   @spec update_profile(Keyword.t) :: ExTwitter.Model.User.t
-  defdelegate update_profile(opts), to: Extwitter.API.Users
+  defdelegate update_profile(opts), to: ExTwitter.API.Users
 
   # POST account/update_profile_background_image
   # https://dev.twitter.com/rest/reference/post/account/update_profile_background_image
